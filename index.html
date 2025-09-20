@@ -7,22 +7,56 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header class="global-header">
         <nav class="navbar">
+            <button class="menu-btn" id="menu-btn">Menu</button>
             <a href="/" class="back-home-btn">MicNews123</a>
-            <div class="header-buttons">
-                <button id="audio-player-btn">Audio</button>
-                <button id="share-btn">Share</button>
-            </div>
+            <button class="share-btn" id="share-btn">Share</button>
         </nav>
     </header>
 
-    <main id="homepage-content">
-        <h1>Latest Articles</h1>
+    <div class="mobile-menu" id="mobile-menu">
+        <button class="close-menu-btn" id="close-menu-btn">&times;</button>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+    
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>MicNews123</h1>
+            <p>Your daily dose of lightweight news.</p>
+        </div>
+    </section>
+
+    <main>
+        <h2>Latest Articles</h2>
         <div id="posts-container">
             </div>
+
+        <div class="load-more-container">
+            <button id="show-more-btn" class="show-more-btn">Show More</button>
+        </div>
     </main>
 
+    <button id="audio-player-btn" class="mic-style-btn">
+        <i class="fas fa-microphone"></i>
+    </button>
+    
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+            <a href="#">Privacy Policy</a>
+        </div>
+        <p class="footer-note">© 2024 MicNews123. All rights reserved.</p>
+    </footer>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
     <script src="posts.js"></script>
     <script src="js/main.js"></script>
 </body>
