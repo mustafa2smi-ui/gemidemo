@@ -1,0 +1,183 @@
+/* ============ 1. Color Palette & Global Styles ============ */
+:root {
+    --primary-color: #007bff; /* Button, link ka color */
+    --secondary-color: #6c757d; /* Border, minor text */
+    --dark-bg: #1a1a1a; /* Main background */
+    --card-bg: #2c2c2c; /* Post, card ka background */
+    --light-text: #f0f0f0; /* Text ka color */
+    --subtle-text: #b0b0b0; /* halka text */
+    --border-radius: 8px; /* corners ko gol karne ke liye */
+    --transition-speed: 0.3s;
+}
+
+/* Default settings jo har element par apply honge */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: var(--light-text);
+}
+
+body {
+    background-color: var(--dark-bg);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+/* ============ 2. Global Header ============ */
+.global-header {
+    background-color: var(--dark-bg);
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.back-home-btn {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.header-buttons button {
+    background: none;
+    border: 1px solid var(--secondary-color);
+    border-radius: var(--border-radius);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+}
+
+.header-buttons button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* ============ 3. Horizontal Ad-Cards ============ */
+.ad-card-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 10px;
+    margin-top: 1rem;
+}
+
+.ad-card {
+    flex: 0 0 150px; /* Fixed width */
+    height: 100px;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ============ 4. Homepage Sections ============ */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+h1, h2, h3 {
+    margin-bottom: 1rem;
+}
+
+/* Posts ko grid mein dikhane ke liye */
+#posts-container {
+    display: grid;
+    gap: 20px;
+    padding: 1rem 0;
+}
+
+.post-item {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform var(--transition-speed);
+}
+
+.post-item:hover {
+    transform: translateY(-5px);
+}
+
+.post-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.post-content {
+    padding: 15px;
+}
+
+.read-more-btn {
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* ============ 5. Footer ============ */
+.footer {
+    background-color: var(--dark-bg);
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.footer-links a {
+    color: var(--subtle-text);
+    margin: 0 10px;
+    font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+    color: var(--light-text);
+}
+
+.footer-cta {
+    margin: 1.5rem 0;
+}
+
+.footer-cta input {
+    background-color: #333;
+    border: none;
+    padding: 10px;
+    border-radius: var(--border-radius);
+    width: 200px;
+}
+
+.footer-cta button {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 10px 15px;
+    border-radius: var(--border-radius);
+    color: white;
+    cursor: pointer;
+}
+
+.footer-note {
+    color: var(--subtle-text);
+    font-size: 0.8rem;
+}
+
+/* ============ 6. Responsiveness (Mobile-First) ============ */
+@media (min-width: 768px) {
+    /* Bade screens ke liye posts ko side by side dikhao */
+    #posts-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
